@@ -1,7 +1,9 @@
-import React from "react";
+"use client";
 
-const page = () => {
-  return <div>page</div>;
-};
-
-export default page;
+export default function Home() {
+  return (
+    <main>
+      <section>{/* Build your portfolio hero here */}</section>
+    </main>
+  );
+}

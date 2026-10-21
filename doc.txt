@@ -1,0 +1,186 @@
+# PROJECT: AKASH S M — BEYOND THE INTERFACE
+
+Act as a senior creative developer specializing in Three.js, React Three Fiber, GSAP, WebGL and premium interactive portfolios. Implement this portfolio directly in my existing project.
+
+## 1. Inspect before editing
+
+- Inspect the project root, package.json, src/app, existing CSS and Next.js configuration.
+- The project uses Next.js 16, React 19, TypeScript and Tailwind CSS v4.
+- Dependencies already listed include Three.js, @react-three/fiber, @react-three/drei, GSAP, Lenis, Framer Motion and Lucide React.
+- Do not reinstall existing packages without checking whether they are installed.
+- Preserve next.config.mjs unless a specific, verified issue requires a change.
+- Use the existing App Router structure.
+- Do not just return code snippets. Create and edit the actual files in the workspace.
+
+## 2. Creative direction
+
+Title: AKASH S M — BEYOND THE INTERFACE
+
+Concept: A cinematic journey from a futuristic cybercity into deep space, ending at an interactive developer portfolio.
+
+Visual identity:
+- Deep charcoal/black backgrounds.
+- White typography and electric-lime accents.
+- Neon city lights, atmospheric fog, stars, particles and a distant planet.
+- Editorial typography, sophisticated spacing and clean interface panels.
+- Premium science-fiction cinematography, not a generic dashboard or gaming HUD.
+
+## 3. Build the interactive preloader first
+
+Create a full-screen terminal-style initialization sequence.
+
+Show:
+- System initialization logs.
+- A progress indicator from 0% to 100%.
+- Scanning lines, restrained neon details and subtle glitch effects.
+- A final "SYSTEM ONLINE" status.
+- An accessible "ENTER THE UNIVERSE" button.
+
+Requirements:
+- Progress must reflect real initialization milestones or asset readiness, not pretend that all resources are loaded.
+- Provide a timeout and fallback if WebGL or an asset fails.
+- Support a skip/continue action.
+- Respect prefers-reduced-motion.
+- Prevent the preloader from trapping users.
+- Animate the transition into the hero using GSAP.
+
+## 4. Build the 3D hero
+
+Use React Three Fiber and Three.js.
+
+Create a performant procedural environment:
+- Stylized futuristic city buildings with glowing window details.
+- Fog and subtle atmospheric particles.
+- A starfield and distant planet suggesting a transition into space.
+- Controlled camera movement.
+- Subtle pointer-driven depth or parallax.
+- A graceful CSS/HTML fallback when WebGL is unavailable.
+
+Avoid expensive simulations, huge models and unnecessary post-processing in the first version. Prefer procedural geometry and reusable materials.
+
+Overlay:
+AKASH S M
+FULL STACK DEVELOPER
+Building web applications and digital products.
+
+Include buttons to explore projects and contact me.
+
+## 5. Create the cinematic scroll experience
+
+Use GSAP timelines and ScrollTrigger for:
+- Staggered hero typography.
+- Cybercity-to-space transitions.
+- Scroll-based camera movement.
+- Section reveals and restrained parallax.
+- A pinned project-storytelling section where appropriate.
+
+Use Lenis for smooth scrolling only if compatible with the existing setup. Integrate Lenis and GSAP ScrollTrigger correctly and avoid competing scroll systems.
+
+Use Framer Motion only for small UI transitions when it adds value.
+
+Use GSAP context and proper cleanup in React effects. Avoid hydration mismatches, layout shifts and animations that prevent scrolling.
+
+## 6. Portfolio content from my resume
+
+Identity:
+Akash S M — Full Stack Developer and Founder of Webxode Technologies.
+Location: Namakkal, Tamil Nadu, India.
+Email: akashvicky2012@gmail.com
+Phone: +91 9345336311
+LinkedIn: https://www.linkedin.com/in/akashsm-dev/
+GitHub: https://github.com/ak220193
+
+Featured projects:
+
+1. Aishwarya Arts — live e-commerce, admin CMS and Razorpay.
+Website: https://www.aishwaryaarts.com/
+GitHub: https://github.com/WebXodeTechnologies/aishwarya_arts
+
+2. Nearbuy Clothing — hyperlocal marketplace with Google OAuth.
+Website: https://www.nearbuyclothing.com/
+GitHub: https://github.com/WebXodeTechnologies/nearbuy_clothing
+
+3. Texora — blog management platform with rich-text editing, Redis, Socket.IO, automated tests and CI.
+Website: https://texora-blogs.vercel.app/
+GitHub: https://github.com/WebXodeTechnologies/blog_management
+
+4. Webxode OS — internal CRM with role-based access, currently in development.
+GitHub: https://github.com/WebXodeTechnologies/webxode-os
+
+5. InvoNext — GST and non-GST billing application.
+Website: https://invonext.vercel.app/
+GitHub: https://github.com/WebXodeTechnologies/Invonext
+
+Additional client websites:
+- Annai Agro Tradings: https://www.annaiagrotradings.com/
+- Founders ROI: https://www.foundersroi.in/
+
+Professional experience:
+- Full Stack Developer and Founder, Webxode Technologies: Jan 2025–present.
+- Frontend Developer, GreenLearnific Technology: Feb–Aug 2024.
+- Frontend Developer, Dastute Switcher Technologies: Aug 2023–Jan 2024.
+- Business Development, Skillync: Apr–Dec 2022.
+- Senior Sales Consultant, OnePlus India: Jun 2018–Oct 2021.
+- Sales Consultant, Apple India: Mar 2017.
+- In-store Demonstrator, Bose India: Feb 2016–Mar 2017.
+
+Education:
+- B.E. Instrumentation and Control Engineering, Tamil Nadu College of Engineering, 2018.
+- Advanced Full Stack Development Program, Crio, 2023–2024.
+
+Technical skills:
+JavaScript, TypeScript, React, Next.js, Tailwind CSS, shadcn/ui, Node.js, Express, REST APIs, MongoDB, Redis, Socket.IO, Auth.js, Google OAuth, Zustand, TanStack Query, Zod, Razorpay, Vitest, React Testing Library, Playwright, Docker, GitHub Actions, Sentry, Vercel, Netlify and Render. AWS is currently being learned.
+
+Do not invent performance metrics, user counts, revenue figures or claims that unfinished projects are live.
+
+## 7. Page architecture
+
+Create reusable components with clear responsibilities. Suggested structure:
+
+src/
+  app/
+    layout.tsx
+    page.tsx
+    globals.css
+  components/
+    portfolio/
+      preloader.tsx
+      scene-canvas.tsx
+      cyber-universe.tsx
+      hero-section.tsx
+      story-sections.tsx
+      projects-section.tsx
+      experience-section.tsx
+      contact-section.tsx
+      site-navigation.tsx
+
+Adapt the structure to the existing project rather than duplicating files.
+
+Use shadcn/ui conventions and accessible primitives for interface elements. Initialize shadcn only if necessary, preserving Tailwind v4 compatibility.
+
+## 8. Quality requirements
+
+- Responsive desktop, tablet and mobile layouts.
+- Reduced-motion experience.
+- WebGL fallback.
+- Lazy-load the 3D scene where practical.
+- Pause or reduce animation when the scene is not visible.
+- Accessible contrast, focus states and keyboard navigation.
+- Semantic markup and useful page metadata.
+- Correct React effect cleanup and no persistent animation loops after unmount.
+- No broken external links.
+- No TypeScript, ESLint or production build errors.
+
+## 9. Work process
+
+Implement in this order:
+1. Inspect the project and establish the actual root.
+2. Create design tokens, page shell and navigation.
+3. Build and test the preloader.
+4. Build the procedural 3D hero.
+5. Integrate scroll storytelling and Lenis.
+6. Add project, experience and contact sections.
+7. Test responsive behavior, reduced motion and WebGL failure.
+8. Run lint and production build, fixing the actual errors.
+
+After each stage, briefly report the files changed, what works and any remaining issue. Prioritize a complete, coherent, deployable portfolio today over experimental effects that jeopardize delivery.
