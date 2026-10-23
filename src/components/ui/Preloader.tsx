@@ -8,12 +8,12 @@ interface PreloaderProps {
 }
 
 const BOOT_LOGS = [
-  { text: "INITIALIZING KERNEL [Webxode OS v2.4]..." },
+  { text: "INITIALIZING KERNEL [Webxode Studio v2.4]..." },
   { text: "MOUNTING VIRTUAL FILESYSTEM [/sys/workspace]..." },
   { text: "ESTABLISHING SECURE CONNECTION TO MONGODB ATLAS..." },
   { text: "LOADING REACT 19 & NEXT.JS 16 APP ROUTER..." },
   { text: "INJECTING DESIGN TOKENS [#52F0F5 / #080A0D]..." },
-  { text: "INITIALIZING WINDOW MANAGER & CLI SUBSYSTEM..." },
+  { text: "INITIALIZING LENIS SMOOTH SCROLL & MOTION ENGINE..." },
   { text: "SYSTEM READY. LAUNCHING WORKSPACE..." },
 ];
 
@@ -21,7 +21,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
   const [progress, setProgress] = useState(0);
   const [isFadingOut, setIsFadingOut] = useState(false);
 
-  // Derive log index directly from progress during render (Clean & warning-free)
+  // Derive log index directly from progress during render
   const currentLogIndex = Math.min(
     Math.floor((progress / 100) * BOOT_LOGS.length),
     BOOT_LOGS.length - 1,
@@ -35,10 +35,10 @@ export default function Preloader({ onComplete }: PreloaderProps) {
           clearInterval(progressInterval);
           return 100;
         }
-        const increment = Math.floor(Math.random() * 12) + 4;
+        const increment = Math.floor(Math.random() * 12) + 6;
         return Math.min(prev + increment, 100);
       });
-    }, 80);
+    }, 70);
 
     return () => clearInterval(progressInterval);
   }, []);
