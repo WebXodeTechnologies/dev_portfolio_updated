@@ -171,13 +171,6 @@ export const metadata: Metadata = {
   category: "technology",
 };
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  themeColor: "#08090a",
-  colorScheme: "dark",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
